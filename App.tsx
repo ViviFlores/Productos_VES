@@ -7,6 +7,11 @@ import * as eva from '@eva-design/eva';
 import { useColorScheme } from 'react-native';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { AuthProvider } from './src/presentation/providers/AuthProvider';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+
+// Create a client
+const queryClient = new QueryClient();
 
 const App = () => {
 
@@ -16,7 +21,7 @@ const App = () => {
   const theme = colorScheme === 'dark' ? eva.dark : eva.light;
 
   return (
-    <>
+    <QueryClientProvider client={queryClient} >
       <IconRegistry icons={EvaIconsPack} />
       <ApplicationProvider {...eva} theme={theme} >
         <NavigationContainer>
@@ -25,7 +30,7 @@ const App = () => {
           </AuthProvider>
         </NavigationContainer>
       </ApplicationProvider>
-    </>
+    </QueryClientProvider >
   )
 }
 
