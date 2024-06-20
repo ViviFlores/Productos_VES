@@ -1,7 +1,7 @@
-import { tesloApi } from "../config/api/tesloApi";
-import { Product } from "../domain/entities/product";
-import { ProductResponse } from "../infrastructure/interfaces/products.response";
-import { ProductMapper } from "../infrastructure/mappers/product.mappers";
+import { tesloApi } from "../../config/api/tesloApi";
+import { Product } from "../../domain/entities/product";
+import { ProductResponse } from "../../infrastructure/interfaces/products.response";
+import { ProductMapper } from "../../infrastructure/mappers/product.mappers";
 
 //acciones http
 //acción lista de productos
